@@ -1,0 +1,45 @@
+
+.list-container2 {
+  max-height: 100%;
+  border: none;
+
+  text-align: center;
+  
+     width:100%;
+     height: 100%;
+
+  
+ 
+}
+
+.list-group2{ max-width: 800px !important;;
+  justify-content: center;
+    justify-content: center!important;
+    height: 80%;
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding:  30px;
+    
+}
+
+.list-group-item2{
+ display: block;
+ padding:  2%;
+}
+
+
+
+
+.logo {
+  margin:0px 0px 2% 0px;
+  max-width: 100%;
+  height: auto;
+	display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+
