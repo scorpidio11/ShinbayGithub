@@ -1,5 +1,6 @@
-node_modules
+node_modules 
 git rm env.local --cached
 git rm env.staging --cached
 git commit -m "Stopped tracking env.local, and env.staging"
 .env
+ 
