@@ -6,7 +6,7 @@ function Footer() {
     <footer className="disc">
   <p>
     
-      *following items may contain raw or under cooked products. consuming raw seafood or meat may increase <br/>your risk of food borne illness, if you have certain medical conditions.
+      *following items may contain raw or under cooked products. consuming raw seafood or meat may increase your risk of food borne illness, if you have certain medical conditions.
 </p>
     </footer>
   );

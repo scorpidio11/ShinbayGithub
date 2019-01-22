@@ -45,6 +45,11 @@
     font-family: 'Sarabun', sans-serif;
     color: #fff;
 }
+
+a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 b, strong {
   font-weight: bolder;
   text-transform: uppercase;

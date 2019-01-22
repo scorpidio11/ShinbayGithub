@@ -16,7 +16,10 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+const url = "mongodb://localhost:27017/shinbay";
+mongoose.connect(url);
+
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/shinbaymenu");
 
 // Start the API server
 app.listen(PORT, function() {

@@ -3,14 +3,14 @@ import "./style.css";
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-function PrintBtn(props) {
+function EditBtn(props) {
   return (
 	  
-	  <button type="button" className="btn3 " {...props} role="button" tabIndex="0"><i class="fas fa-file-pdf fa-3x vl" ></i>  DOWNLOAD PDF</button>
+	  <button type="button" className="btn2 btn-outline-primary edit-btn" {...props} role="button" tabIndex="0">Edit</button>
 	  
 	  
 
   );
 }
 
-export default PrintBtn;
+export default EditBtn;

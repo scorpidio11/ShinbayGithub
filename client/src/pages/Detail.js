@@ -1,6 +1,4 @@
 
-
-
 import React, { Component } from "react";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
@@ -8,29 +6,29 @@ import { Col, Row, Container } from "../components/Grid";
 import { FinalList, FinalListItem, } from "../components/FinalList";
 import Footer from "../components/Footer";
 
-class Books extends Component {
+class Admin extends Component {
   state = {
-    books: [],
+    shinbay: [],
     title: "",
-    author: "",
+    description: "",
 //     synopsis: ""
   };
 
   componentDidMount() {
-    this.loadBooks();
+    this.loadAdmin();
   }
 
-  loadBooks = () => {
-    API.getBooks()
+  loadAdmin = () => {
+    API.getAdmin()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "" })
+        this.setState({ shinbay: res.data, title: "", description: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
+  deleteShindata = id => {
+    API.deleteShindata(id)
+      .then(res => this.loadAdmin())
       .catch(err => console.log(err));
   };
 
@@ -43,13 +41,13 @@ class Books extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
+    if (this.state.title && this.state.description) {
+      API.saveShindata({
         title: this.state.title,
-        author: this.state.author,
+        description: this.state.description,
 //         synopsis: this.state.synopsis
       })
-        .then(res => this.loadBooks())
+        .then(res => this.loadAdmin())
         .catch(err => console.log(err));
     }
   };
@@ -61,16 +59,16 @@ class Books extends Component {
    
         <Col size="md-12">
       
-            {this.state.books.length ? (
+            {this.state.shinbay.length ? (
               <FinalList>
-                {this.state.books.map(book => (
-                  <FinalListItem key={book._id}>
+                {this.state.shinbay.map(shindata => (
+                  <FinalListItem key={shindata._id}>
                 
                       <strong>
-                        {book.title} 
+                        {shindata.title} 
                       </strong>
                       <p>
-                      {book.author}
+                      {shindata.description}
                       </p>
                    
                   </FinalListItem>
@@ -94,7 +92,7 @@ class Books extends Component {
   }
 }
 
-export default Books;
+export default Admin;
 
 
-{/* <Link to="/">← Back to Authors</Link> */}
+{/* <Link to="/">← Back to descriptions</Link> */}

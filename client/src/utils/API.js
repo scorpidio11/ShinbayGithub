@@ -1,20 +1,24 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  // Gets all shinbay
+  getAdmin: function () {
+    return axios.get("/api/shinbay");
   },
-  // Gets the book with the given id
-  getBook: function(id) {
-    return axios.get("/api/books/" + id);
+  // Gets the shindata with the given id
+  getShindata: function (id) {
+    return axios.get("/api/shinbay/" + id);
   },
-  // Deletes the book with the given id
-  deleteBook: function(id) {
-    return axios.delete("/api/books/" + id);
+  // Deletes the shindata with the given id
+  deleteShindata: function (id) {
+    return axios.delete("/api/shinbay/" + id);
   },
-  // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  // Saves a shindata to the database
+  saveShindata: function (shindataData) {
+    return axios.post("/api/shinbay", shindataData);
+  },
+  // Edit a shindata to the database
+  editShindata: function (shindataData) {
+    return axios.put("/api/shinbay/" + shindataData._id, shindataData);
   }
 };
