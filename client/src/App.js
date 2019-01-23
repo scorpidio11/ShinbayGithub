@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Admin from "./pages/Admin";
+import Books from "./pages/Books";
 import Detail from "./pages/Detail";
 import Print from "./pages/Print";
 import NoMatch from "./pages/NoMatch";
@@ -12,11 +12,11 @@ function App() {
       <div>
   
         <Switch>
-          <Route exact path="/" component={Admin} />
-          <Route exact path="/shinbay" component={Admin} />
-          {/* <Route exact path="/shinbay/:id" component={Detail} /> */}
-          <Route exact path="/view" component={Detail} />
-          <Route exact path="/print" component={Print} />
+          <Route exact path="/" component={Books} />
+          <Route exact path="/books" component={Books} />
+          {/* <Route exact path="/books/:id" component={Detail} /> */}
+          <Route exact path="/menu" component={Detail} />
+            <Route exact path="/menuprint" component={Print} />
           <Route component={NoMatch} />
         </Switch>
       </div>

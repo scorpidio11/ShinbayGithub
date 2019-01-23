@@ -1,37 +1,37 @@
 
+
+
 import React, { Component } from "react";
+import PrintBtn from "../components/PrintBtn";
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { FinalListPDF, FinalListItemPDF, } from "../components/Print";
+import { FinalList, FinalListItem, } from "../components/FinalList";
 import Footer from "../components/Footer";
 
-class Admin extends Component {
+class Books extends Component {
   state = {
-    shinbay: [],
+    books: [],
     title: "",
-    description: "",
+    author: "",
 //     synopsis: ""
   };
 
   componentDidMount() {
-    this.loadAdmin();
-
-    
-
+    this.loadBooks();
   }
- 
-  loadAdmin = () => {
-    API.getAdmin()
+
+  loadBooks = () => {
+    API.getBooks()
       .then(res =>
-        this.setState({ shinbay: res.data, title: "", description: "" })
+        this.setState({ books: res.data, title: "", author: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteShindata = id => {
-    API.deleteShindata(id)
-      .then(res => this.loadAdmin())
+  deleteBook = id => {
+    API.deleteBook(id)
+      .then(res => this.loadBooks())
       .catch(err => console.log(err));
   };
 
@@ -44,13 +44,13 @@ class Admin extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.description) {
-      API.saveShindata({
+    if (this.state.title && this.state.author) {
+      API.saveBook({
         title: this.state.title,
-        description: this.state.description,
+        author: this.state.author,
 //         synopsis: this.state.synopsis
       })
-        .then(res => this.loadAdmin())
+        .then(res => this.loadBooks())
         .catch(err => console.log(err));
     }
   };
@@ -62,29 +62,30 @@ class Admin extends Component {
    
         <Col size="md-12">
       
-            {this.state.shinbay.length ? (
-              <FinalListPDF>
-                {this.state.shinbay.map(shindata => (
-                  <FinalListItemPDF key={shindata._id}>
+            {this.state.books.length ? (
+              <FinalList>
+                {this.state.books.map(book => (
+                  <FinalListItem key={book._id}>
                 
                       <strong>
-                        {shindata.title} 
+                        {book.title} 
                       </strong>
                       <p>
-                      {shindata.description}
+                      {book.author}
                       </p>
                    
-                  </FinalListItemPDF>
+                  </FinalListItem>
                 ))}
                    <Footer>
             </Footer>  
-              </FinalListPDF>
+              </FinalList>
               
             ) : (
             <p>No Results to Display</p>
 
             )}
 
+<PrintBtn/>
           </Col>
       
         </Row>
@@ -95,7 +96,7 @@ class Admin extends Component {
   }
 }
 
-export default Admin;
+export default Books;
 
 
-{/* <Link to="/">← Back to descriptions</Link> */}
+{/* <Link to="/">← Back to Authors</Link> */}

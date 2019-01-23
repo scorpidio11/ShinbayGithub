@@ -1,3 +1,3 @@
 module.exports = {
-  Shindata: require("./shindata")
+  Book: require("./book")
 };

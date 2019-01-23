@@ -11,10 +11,7 @@ export function FinalList({ children }) {
   return (
 	    
     <div className="container-fluid">
-    
-
-      
-    <a href="/"><img className="logo" src={logo} alt="Logo" /> </a>
+    <img className="logo" src={logo} alt="Logo" /> 
     
    <ul className="container-fluid list-group2">{children}</ul>
     </div>
@@ -22,7 +19,7 @@ export function FinalList({ children }) {
 }
 
 export function FinalListItem({ children }) {
-  return <li className="list-group-item3">{children}</li>;
+  return <li className="list-group-item2">{children}</li>;
 }
 
 

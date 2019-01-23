@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const shindataRoutes = require("./shinbay");
+const bookRoutes = require("./books");
 
-// Shindata routes
-router.use("/shinbay", shindataRoutes);
+// Book routes
+router.use("/books", bookRoutes);
 
 module.exports = router;

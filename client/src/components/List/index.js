@@ -33,17 +33,17 @@ export function PrintBtn(props) {
 
 export function EmailBtn(props) {
   return (
-    <a {...props} style={{ float: "center", margin: 10 }} className="btn btn-lg" href="mailto:?Subject=Shinbay%20Menu" target="_top" role="button">
-		{props.children}
-    </a>
+    <button {...props} style={{ float: "center", margin: 10 }} className="btn btn-lg">
+      {props.children}
+    </button>
   );
 }
 
 export function TwBtn(props) {
   return (
-    <a {...props} style={{ float: "center", margin: 10 }} className="btn btn-lg" href="https://www.facebook.com/shinbayAZ" target="_bottom" role="button">
+    <button {...props} style={{ float: "center", margin: 10 }} className="btn btn-lg">
       {props.children}
-    </a>
+    </button>
   );
 }
 
